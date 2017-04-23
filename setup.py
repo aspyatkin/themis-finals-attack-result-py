@@ -24,7 +24,7 @@ setup(
     install_requires=[
         'setuptools>=35.0.0'
     ],
-    extra_require={
+    extras_require={
         ':python_version<"3.4"': [
              'enum34>=1.1.6'
         ]
