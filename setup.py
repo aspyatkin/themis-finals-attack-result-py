@@ -24,10 +24,13 @@ setup(
     description='Themis Finals attack result constants',
     author='Alexander Pyatkin',
     author_email='aspyatkin@gmail.com',
-    url='https://github.com/aspyatkin/themis-finals-attack-result-py',
+    url='https://github.com/themis-project/themis-finals-attack-result-py',
     license='MIT',
     packages=find_packages('.'),
-    install_requires=install_requires,
+    install_requires=[
+        'setuptools>=35.0.0',
+        'enum34>=1.1.6;python_version<"3.4"'
+    ],
     namespace_packages=[
         'themis',
         'themis.finals',
