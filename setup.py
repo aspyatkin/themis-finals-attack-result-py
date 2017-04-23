@@ -12,12 +12,6 @@ about_filename = os.path.join(
 with io.open(about_filename, 'rb') as fp:
     exec(fp.read(), about)
 
-install_requires = [
-    'setuptools>=0.8'
-]
-if sys.version_info < (3,4):
-    install_requires.append('enum34>=1.1.6')
-
 setup(
     name='themis.finals.attack.result',
     version=about['__version__'],
@@ -28,9 +22,13 @@ setup(
     license='MIT',
     packages=find_packages('.'),
     install_requires=[
-        'setuptools>=35.0.0',
-        'enum34>=1.1.6;python_version<"3.4"'
+        'setuptools>=35.0.0'
     ],
+    extra_require={
+        ':python_version<"3.4"': [
+             'enum34>=1.1.6'
+        ]
+    },
     namespace_packages=[
         'themis',
         'themis.finals',
